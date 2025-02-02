@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mayank | 14-Year-Old Programmer skilled in Python, HTML, CSS, and JavaScript">
+    <meta name="keywords" content="Mayank, Programmer, Python, Web Developer, HTML, CSS, JavaScript">
+    <meta name="author" content="Mayank">
+    <title>Mayank | Developer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./image.png" type="image/x-icon">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu li {
+            margin: 0 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #007bff;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 100px 5%;
+        }
+
+        .hero-left img {
+            width: 300px;
+            border-radius: 50%;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s;
+        }
+
+        .hero-left img:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-right {
+            max-width: 600px;
+            margin-left: 50px;
+        }
+
+        .hero-right h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-right span {
+            color: #007bff;
+        }
+
+        .hero-right p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 10px;
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: white;
+            border-radius: 30px;
+            box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(0, 123, 255, 0.5);
+        }
+
+        /* Projects Section */
+        .project-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 50px 5%;
+        }
+
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card i {
+            font-size: 3rem;
+            color: #007bff;
+        }
+
+        /* Project Title */
+        #projects h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        #projects h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: #007bff;
+            margin: 10px auto;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        /* About Section */
+        #about {
+            padding: 80px 5%;
+            text-align: center;
+            background: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        #about h2 {
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            padding: 80px 5%;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        #contact h2 {
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        #contact a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+            margin-top: 50px;
+        }
+
+        #typewriter {
+            color: #007bff;
+            font-weight: bold;
+            border-right: 3px solid #007bff;
+            /* Cursor effect */
+            padding-right: 5px;
+            animation: blinkCursor 0.8s infinite;
+        }
+
+        @keyframes blinkCursor {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./image.png" alt="Mayank Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <div class="hero-left">
+                <img src="./mayank.webp" alt="Mayank - Programmer">
+            </div>
+            <div class="hero-right">
+                <h1>Hi, I'm <span>Mayank</span></h1>
+                <h2>I'm a <span id="typewriter"></span></h2>
+                <p>I'm a passionate 14-year-old developer skilled in Python, HTML, CSS, and JavaScript. I love creating
+                    websites, applications, and cool projects.</p>
+                <a href="#about" class="btn">Learn More</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-container">
+            <div class="project-card">
+                <i class="ri-code-box-line"></i>
+                <h3>Web Development</h3>
+                <p>Creating responsive and modern websites using HTML, CSS, and JavaScript.</p>
+                <a href="#" class="btn">View More</a>
+            </div>
+            <div class="project-card">
+                <i class="ri-terminal-box-line"></i>
+                <h3>Python Projects</h3>
+                <p>Building Python-based applications, including AI models and automation scripts.</p>
+                <a href="" class="btn">View More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I started coding at an early age and have a passion for programming. I specialize in web development and
+            Python-based applications.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:Mayank_XD@outlook.com">mayank64@gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mayank | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const roles = ["Programmer", "Web Developer", "AI Enthusiast", "Innovator"];
+            let roleIndex = 0;
+            let charIndex = 0;
+            const typewriter = document.getElementById("typewriter");
+            const typingSpeed = 100;
+            const deletingSpeed = 50;
+            const delayBetweenWords = 2000;
+
+            function typeText() {
+                if (charIndex < roles[roleIndex].length) {
+                    typewriter.innerHTML = roles[roleIndex].substring(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(typeText, typingSpeed);
+                } else {
+                    setTimeout(eraseText, delayBetweenWords);
+                }
+            }
+
+            function eraseText() {
+                if (charIndex > 0) {
+                    typewriter.innerHTML = roles[roleIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(eraseText, deletingSpeed);
+                } else {
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    setTimeout(typeText, typingSpeed);
+                }
+            }
+
+            setTimeout(typeText, 500);
+        });
+    </script>
+</body>
+
+</html>
